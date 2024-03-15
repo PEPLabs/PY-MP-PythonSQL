@@ -13,7 +13,10 @@ cursor = conn.cursor()
 def create_dogs_table():
 
     # Create a table called "dogs"
-    cursor.execute("CREATE TABLE IF NOT EXISTS dogs (name TEXT, breed TEXT, age INTEGER)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS dogs (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "name TEXT, "
+                   "breed TEXT, "
+                   "age INTEGER)")
 
 
 # TODO: Complete insert_dog() by inserting a new dog (provided in the parameters) into the "dogs" table.
