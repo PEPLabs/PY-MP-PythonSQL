@@ -2,50 +2,56 @@
 
 ## Background 
 
-A database connection is an integral part of any modern API. Many required functionalities of modern backend application aren't possible to implement without durable long term data storage. Remember the acronym "CRUD". A baseline API will typically be able to Create, Read, Update, and Delete data. In this mini project, we'll explore how to use python to create a connection to a database, create a database table, and insert/read the data in the database. 
+A database connection is an integral part of any modern API. Many standard functionalities of modern backend application aren't possible to implement without durable long term data storage. Remember the acronym "CRUD". An API will typically be able to Create, Read, Update, and Delete data. In this mini project, we'll explore how to use python to create a connection to a database, create a database table, and create/read the data in the database. 
 
-The primary technologies you will leverage in this project are Python and SQL. The project will be written in Python.
+The primary technologies you will leverage in this project are Python and SQL. The project will be written in Python, and the database will be SQLite.
 
-## Database Tables 
+## Files
+
+### lab.py
+The lab.py file contains variables and functions that must be initialized and implemented to complete the Mini Project.
+
+### app.py
+The app.py file serves as the main entry point for the project. It runs the functions in lab.py to test if it has been correctly implemented.
+
+### lab_test.py
+The lab_test.py file contains unit tests for your work in lab.py.
+
+## Project Structure
+- src/
+  - main/
+    - app.py
+    - lab.py
+  - test/
+    - lab_test.py
+
+## Database Table
 
 The following table will be initialized in your project's create_dogs_table() function.
 
 ### dogs
 ```
-
+id INTEGER PRIMARY KEY,
+name TEXT,
+breed TEXT,
+age INTEGER
 ```
-
-# Technical Requirements
-
-### SQLite
-
-- The app will already be a Python project with SQLite tables created at runtime. 
-- You will be responsible for cleaning and inserting data into the database, as well as selecting and modifying that data for analysis.  
-
-
 
 # User Stories
 
 
-### Load user data into users table
-- Load the users.csv file found in /resources into the users table
-- Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
+### Establish a Connection and a Cursor
+- Initialize the conn and cursor variables defined at the top of lab.py.
+- conn will hold the connection to the database.
+- cursor will hold the cursor object for the connection, allowing you to manipulate the database.
 
-### Load call data into callLogs table
-- Load the callLogs.csv file found in /resources into the callLogs table 
-- Clean the data before insertion. In this project, you just have to leave out any records with missing values or too many values.
+### Implement create_dogs_table
+- Use your cursor object to execute a sql statement that creates the dogs table
+- Follow the "Database Table" specification above.
 
-### Save user analytic data into userAnalytics.csv
-- Save analytic data for users into a csv file. The file must be named userAnalytics.csv, and it must be in the /resources folder
-- Records must include userId, avgDuration, numCalls. Example:
-  ```
-  userId,avgDuration,numCalls
-  1,105.0,4
-  ```
-- HINT: This data will be selected from the callLogs table.
-- HINT 2: Dictionaries will be very helpful for matching data with userIds. Consider one for average call duration and one for number of calls. 
+### Implement insert_dog
+- Use your cursor object to execute a sql statement that creates a new record in the dogs table.
+- The values for the insert statement will be provided in the parameters of insert_dog. (name, breed, age). You just have to write the actual statement.
 
-### Save ordered call logs into orderedCallLogs.csv
-- Save call logs into csv files, ordered by userId, then start time. The file must be named orderedCallLogs.csv
-- HINT: This data will be selected from the callLogs table.
-- HINT 2: You can make use of ORDER BY to greatly simplify your python logic
+### Implement select_all_dogs
+- Use your cursor object to execute a sql statement that selects all record from the dogs table
