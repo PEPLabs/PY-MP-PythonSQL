@@ -33,7 +33,7 @@ class TestLab(unittest.TestCase):
         rows = lab.cursor.execute("SELECT * FROM dogs").fetchall()
 
         # assert that the dog was inserted correctly
-        self.assertIn(("Mister", "Foxhound", 5), rows, "Failed to insert dog correctly.")
+        self.assertIn((1, "Mister", "Foxhound", 5), rows, "Failed to insert dog correctly.")
 
 
 if __name__ == "__main__":
