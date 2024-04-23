@@ -9,10 +9,14 @@ conn = "TODO: Create a database connection"
 cursor = "TODO: create a cursor with the connection"
 
 
-# TODO: Complete create_dogs_table() by creating a table in the database called "dogs".
+# Created for you: A dogs table with autoincrementing ID
 def create_dogs_table():
 
-    """TODO"""
+    # Create a table called "dogs"
+    cursor.execute("CREATE TABLE IF NOT EXISTS dogs (id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                   "name TEXT, "
+                   "breed TEXT, "
+                   "age INTEGER)")
 
 
 # TODO: Complete insert_dog() by inserting a new dog (provided in the parameters) into the "dogs" table.
