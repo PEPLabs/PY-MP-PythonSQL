@@ -22,7 +22,7 @@ class TestLab(unittest.TestCase):
 
     def test_insert_and_select_dog(self):
 
-        lab.insert_dog("Mister", "Foxhound", 5)
+        lab.insert_dog(1, "Mister", "Foxhound", 5)
 
         # assert that there is a row in the dogs table
         lab.cursor.execute("SELECT * FROM dogs")
