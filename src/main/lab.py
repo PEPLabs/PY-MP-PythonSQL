@@ -16,7 +16,7 @@ def create_dogs_table():
 
 
 # TODO: Complete insert_dog() by inserting a new dog (provided in the parameters) into the "dogs" table.
-def insert_dog(name, breed, age):
+def insert_dog(id, name, breed, age):
 
     """TODO"""
 
