@@ -31,7 +31,7 @@ The following table will be initialized in your project's create_dogs_table() fu
 
 ### dogs
 ```
-id INTEGER PRIMARY KEY,
+id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT,
 breed TEXT,
 age INTEGER
