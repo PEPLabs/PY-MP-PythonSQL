@@ -25,12 +25,12 @@ class TestLab(unittest.TestCase):
         lab.insert_dog("Mister", "Foxhound", 5)
 
         # assert that there is a row in the dogs table
-        lab.cursor.execute("SELECT * FROM dogs")
-        row = lab.cursor.fetchone()
+        dogs_from_lab = lab.select_all_dogs();
+        row = dogs_from_lab[0]
         self.assertIsNotNone(row, "No rows found in the dogs table.")
 
         # select all rows from the "dogs" table
-        rows = lab.cursor.execute("SELECT * FROM dogs").fetchall()
+        rows = lab.select_all_dogs()
 
         # assert that the dog was inserted correctly
         self.assertIn((1, "Mister", "Foxhound", 5), rows, "Failed to insert dog correctly.")
