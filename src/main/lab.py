@@ -37,3 +37,14 @@ def select_all_dogs():
 
     # return the rows
     return rows  # return "TODO: return the rows"
+
+
+
+
+
+# --Utility Function, don't edit------------
+
+# clear the dogs table of data
+def clear_dogs_table():
+    cursor.execute("DELETE FROM dogs")
+
